@@ -61,7 +61,7 @@ public class Teste {
         //Printando os atributos do usuário
         System.out.println(user1);
         System.out.printf("A pegada de carbono, em Kg/Ano do usuário é de: " +
-                String.format("%.2f",user1.getEmissaoTotalAno()) + " Kgs de CO2\n");
+                String.format("%.2f",user1.getEmissaoTotalAno()) + " Kgs de CO2\n\n");
 
 
         ////////////////////////Informações/Curiosidades sobre os mares e oceanos//////////////////////
