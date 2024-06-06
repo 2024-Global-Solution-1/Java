@@ -94,7 +94,7 @@ public class Usuario extends Dados{
         boolean isValid = false;
         while (!isValid) {
             System.out.println("\n  -----Cadastro de Veículo -----\n");
-            System.out.println("Qual tipo de combustível seu veículo usa?  (Etanol/Gasolina)");
+            System.out.println("Qual tipo de combustível seu veículo usa?  (Etanol/Gasolina/Diesel)");
             String tipo = scanner.nextLine();
             switch (tipo.toLowerCase()) {
                 case "etanol":
@@ -104,6 +104,11 @@ public class Usuario extends Dados{
                 case "gasolina":
                     veiculo.setTipoVeic(EnumCombustivel.GASOLINA);
                     isValid = true;
+                    break;
+                case "diesel":
+                    veiculo.setTipoVeic(EnumCombustivel.DIESEL);
+                    isValid = true;
+                    break;
                 default:
                     break;
             }

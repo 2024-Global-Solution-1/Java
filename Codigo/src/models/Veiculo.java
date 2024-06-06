@@ -59,7 +59,10 @@ public class Veiculo {
             emissao = (kmDia / kmLitro) * 0.82 * 0.75 * 3.7;
         }
         else if (tipo == EnumCombustivel.ETANOL) {
-            emissao = (kmDia / kmLitro) * 1.5;
+            emissao = (kmDia / kmLitro) * 1.6;
+        }
+        else if (tipo == EnumCombustivel.DIESEL) {
+            emissao = (kmDia / kmLitro) * 2.7;
         }
 
         return emissao;
