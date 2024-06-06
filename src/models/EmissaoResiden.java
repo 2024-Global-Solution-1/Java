@@ -74,7 +74,7 @@ public class EmissaoResiden implements Emissoes {
                 ", Emissão total individual na residência/ano em Kgs de CO2 = " + getEmissaoTotalResidAno() +
                 "}\n";
     }
-
+//  Pega informações revelantes à emissão de carbono e as adiciona aos respectivos atributos
     @Override
     public void pegarInformacoes(Usuario user) {
         Scanner numScanner = new Scanner(System.in);
@@ -92,8 +92,9 @@ public class EmissaoResiden implements Emissoes {
 
     }
 
+//  Calcula a emissão total do usuário em sua residência
 @Override
-    public void calcularEmissao(Usuario user){
+    public double calcularEmissao(Usuario user){
         double totalAno = 0;
         //energia elétrica
         totalAno += getGastoEletMensal() * 0.4 * 12;
@@ -107,6 +108,7 @@ public class EmissaoResiden implements Emissoes {
         totalAno /= getQtdPessoas();
 
         setEmissaoTotalResidAno(totalAno);
+        return totalAno;
 
     }
 

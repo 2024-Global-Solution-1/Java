@@ -51,6 +51,7 @@ public class Usuario extends Dados{
         this.emissaoTotalAno = emissaoTotalAno;
     }
 
+
     @Override
     public String toString() {
         return "\nUsuário  {" +
@@ -70,6 +71,7 @@ public class Usuario extends Dados{
                 "}\n";
     }
 
+//  Método para pegar informações específicas e genéricas (super.cadastrar()) e adicioná-las aos respectivos atributos.
     @Override
     public void cadastrar(){
         Scanner scanner = new Scanner(System.in);
@@ -80,9 +82,12 @@ public class Usuario extends Dados{
         setIdade(intScanner.nextInt());
 
         super.cadastrar();
+        setEstaCadastrado(true);
         ContagemRegistro.addUser(this);
     }
 
+//  Pega um veículo e suas informações relevantes à queimada de carbono
+//  como parâmetro e o adiciona à lista de veículos do usuário.
     public void addVeic(Veiculo veiculo) {
         Scanner scanner = new Scanner(System.in);
         Scanner numberScanner = new Scanner(System.in);
@@ -118,7 +123,8 @@ public class Usuario extends Dados{
 
         listaVeic.add(veiculo);
     }
-
+//  Calcula a emissão total de carbono do usuário por ano.
+//  Utiliza informações de carbono de cada veículo registrado, de transporte público e residência.
     public void calcularPegadaCarbono(EmissoesTransp transPublico, EmissaoResiden residencia){
         double totalEmissaoAno = 0;
         for (Veiculo veiculo : getListaVeic()) {
@@ -128,6 +134,7 @@ public class Usuario extends Dados{
         totalEmissaoAno += residencia.getEmissaoTotalResidAno();
 
         setEmissaoTotalAno(totalEmissaoAno);
+
 
 
     }

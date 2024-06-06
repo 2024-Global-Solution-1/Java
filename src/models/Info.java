@@ -16,6 +16,7 @@ public class Info {
         Info.informacoes = informacoes;
     }
 
+//  Adiciona alguma informação e ou curiosidade ao banco de dados.
     public static void addInfo(String info) {
         informacoes.add(info);
     }

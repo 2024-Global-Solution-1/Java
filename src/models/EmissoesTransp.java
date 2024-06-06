@@ -95,6 +95,8 @@ public class EmissoesTransp implements Emissoes {
                 ", Emissão total por transporte público/ano em Kgs de CO2 = " + getEmissaoTotalTranspAno() +
                 "}\n";
     }
+//  Pega as informações relevantes à emissão de carbono e as adiciona aos respectivos atributos,
+//  se o usuário usar X transporte
 @Override
     public void pegarInformacoes(Usuario user){
         Scanner scanner = new Scanner(System.in);
@@ -143,8 +145,9 @@ public class EmissoesTransp implements Emissoes {
         }
 
     }
+//  Calcula a emissão total de carbono do usuário enquanto utiliza transporte público
     @Override
-    public void calcularEmissao(Usuario user) {
+    public double calcularEmissao(Usuario user) {
         double totalTranspAno = 0;
         if (getDiaSemanaOnibus() != 0) {
             totalTranspAno += ((getDiaSemanaOnibus() * getKmOnibus() * 52) / 3 * 0.82 * 0.75 * 3.7) / 30;
@@ -156,6 +159,7 @@ public class EmissoesTransp implements Emissoes {
             totalTranspAno += getAnoVoo() * getKmVoo() * getGastoTipoVoo();
         }
         setEmissaoTotalTranspAno(totalTranspAno);
+        return totalTranspAno;
     }
 
 

@@ -12,6 +12,7 @@ public abstract class Dados {
     private String youtube;
     private String twitter;
     private String senha;
+    private boolean estaCadastrado = false;
 
     public String getNome() {
         return nome;
@@ -77,6 +78,15 @@ public abstract class Dados {
         this.senha = senha;
     }
 
+    public boolean isEstaCadastrado() {
+        return estaCadastrado;
+    }
+
+    public void setEstaCadastrado(boolean estaCadastrado) {
+        this.estaCadastrado = estaCadastrado;
+    }
+
+// Método para pegar as informações e adicioná-las aos respectivos atributos
     public void cadastrar() {
         Scanner scanner = new Scanner(System.in);
 

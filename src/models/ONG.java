@@ -84,6 +84,7 @@ public class ONG extends Dados{
                 ", senha =  ******* "+
                 "}\n";
     }
+//   Método para pegar informações específicas e genéricas (super.cadastrar()) e adicioná-las aos respectivos atributos.
     @Override
     public void cadastrar(){
         Scanner scanner = new Scanner(System.in);
@@ -107,6 +108,8 @@ public class ONG extends Dados{
         if (site != null) {setWebsite(site);}
 
         super.cadastrar();
+
+        setEstaCadastrado(true);
 
         ContagemRegistro.addOng(this);
     }

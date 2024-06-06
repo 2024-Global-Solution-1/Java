@@ -52,6 +52,7 @@ public class Veiculo {
         this.qtdDiasSemana = qtdDiasSemana;
     }
 
+//  Calcula a emissão de carbono do veículo em questão, de acordo com o tipo de combustível queimado
     public double calcularEmissaoVeic(double kmDia, double kmLitro, EnumCombustivel tipo) {
         double emissao = 0;
         if (tipo == EnumCombustivel.GASOLINA) {

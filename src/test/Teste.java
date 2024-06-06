@@ -25,6 +25,10 @@ public class Teste {
         /////////////////////////Cadastrando objetos da classe Empresa, ONG, e Usuario////////////////////
 
         empresa1.cadastrar();
+        //Mostrará que a empresa1 está cadastrada, porém a ong1 ainda não
+        System.out.println("Empresa setá cadastrada: " + ContagemRegistro.checkCadastro(empresa1));
+        System.out.println("ONG está cadastrada: " + ContagemRegistro.checkCadastro(ong1));
+
         ong1.cadastrar();
         user1.cadastrar();
         //Printando a visualização dos atributos das classes Empresa e ONG
@@ -45,18 +49,19 @@ public class Teste {
 
         //O user1 está sendo passado por razões de verificação. Você não consegue chamar os métodos sem um objeto usuário.
         transPublicoUser1.pegarInformacoes(user1);
-        transPublicoUser1.calcularEmissao(user1);
+        System.out.println("Emissão do usuário por transporte público: " + transPublicoUser1.calcularEmissao(user1));
         System.out.println(transPublicoUser1);
 
         residenciaUser1.pegarInformacoes(user1);
-        residenciaUser1.calcularEmissao(user1);
+        System.out.println("Emissão do usuário por residência: " + residenciaUser1.calcularEmissao(user1));
         System.out.println(residenciaUser1);
 
         //////////////////////////////Calculando a pegada de carbono final, por ano, do usuário/////////////
         user1.calcularPegadaCarbono(transPublicoUser1, residenciaUser1);
         //Printando os atributos do usuário
         System.out.println(user1);
-        System.out.printf("A pegada de carbono, em Kg/Ano do usuário é de: " + String.format("%.2f",user1.getEmissaoTotalAno()) + "\n");
+        System.out.printf("A pegada de carbono, em Kg/Ano do usuário é de: " +
+                String.format("%.2f",user1.getEmissaoTotalAno()) + " Kgs de CO2\n");
 
 
         ////////////////////////Informações/Curiosidades sobre os mares e oceanos//////////////////////
